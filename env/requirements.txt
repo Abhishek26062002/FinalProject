@@ -88,4 +88,8 @@ urllib3==2.2.2
 uvicorn==0.30.3
 watchfiles==0.22.0
 wcwidth==0.2.13
+<<<<<<< HEAD
 websockets==12.0
+=======
+websockets==12.0
+>>>>>>> 3ad6c9ac1d4fef4d3cf694363aea733e07d034f4
