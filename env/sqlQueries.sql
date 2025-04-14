@@ -13,6 +13,7 @@ CREATE INDEX ix_student_email ON student (email);
 CREATE TABLE mcq_results (
     id SERIAL PRIMARY KEY,
     student_id INTEGER,
+    test_id INTEGER,
     Q_id INTEGER[],
     Student_answer VARCHAR[],
     correct_answer VARCHAR[],

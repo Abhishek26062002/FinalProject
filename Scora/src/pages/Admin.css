@@ -3,7 +3,7 @@
     flex-direction: row;
 }
 .admin{
-        height: auto;
+        height: calc(100vh - 30px);
         width: calc(100% - 30px);
         margin: 15px;
         display: flex;
@@ -11,6 +11,7 @@
         flex-direction: row;
         align-items: start;
         justify-content: start;
+        overflow-y: scroll;
 }
 .admin-profile{
     width: 600px;

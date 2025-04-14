@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ===== Courses Section ===== */
+.Courses {
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .courses-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      background-color: rgb(212, 212, 215);
+      border-radius: 5px;
+      border: none;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #bbb;
+      }
+    }
+  }
+
+  .recommendations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .suggested-jobs,
+    .suggested-courses {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: hsl(0, 30%, 95%);
+      color: black;
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+          padding: 5px 0;
+          border-bottom: 1px solid #eee;
+
+          a {
+            color: #333;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===== Sidebar Section ===== */
+.sidebar {
+    height: calc(100vh - 30px);
+    width: 300px;
+    background: linear-gradient(180deg, rgba(24,31,88,1) 0%, rgba(51,67,190,1) 100%);
+    border-radius: 25px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar-image {
+    width: 50%;
+    height: auto;
+    padding: 30px 0px;
+}
+
+.bi-profile {
+    font-size: 100px;
+    color: aliceblue;
+}
+
+.sidebar-Name {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar-email {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-icons {
+    color: #ffffff;
+    font-size: 24px;
+    padding: 0px 12px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 30px 0px;
+}
+
+.nav-list-items {
+    list-style: none;
+    padding: 10px;
+    transition: 0.5s ease;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.nav-items {
+    font-size: 24px;
+    color: aliceblue;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.nav-list-items:hover {
+    background-color: rgba(0, 0, 0, 0.300);
+}
+
+.nav-list-items.active {
+    background-color: rgba(0, 0, 0, 0.300);
+}
+
+.nav-container {
+    display: none;
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== Media Queries ===== */
+@media screen and (max-width: 1000px) {
+    .nav-container {
+        display: block;
+    }
+    .navbar {
+        background: linear-gradient(90deg, rgba(24,31,88,1) 17%, rgba(67,83,205,1) 92%);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        position: absolute;
+    }
+    .navbar-image {
+        height: 30px;
+        width: auto;
+    }
+    .nav-icon {
+        font-size: 40px;
+        color: #ffffff;
+    }
+
+    .sidebar-container.visible {
+        display: block;
+    }
+    .nav-container.hidden {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .sidebar {
+        height: calc(100vh - 30px);
+        width: calc(100vw - 30px);
+        position: fixed;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        z-index: 10;
+    }
+}

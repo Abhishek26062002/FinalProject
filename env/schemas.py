@@ -18,12 +18,15 @@ class Student(BaseModel):
 
     class Config:
         orm_mode = True
+from pydantic import BaseModel
 
 class MCQSubmission(BaseModel):
-    Q_id: list[int]
+    Q_id: list[str]
     Student_answer: list[str]
     correct_answer: list[str]
     student_id: int
+    test_id: int
+
 
     class Config:
         orm_mode = True

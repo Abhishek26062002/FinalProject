@@ -59,13 +59,13 @@ const AdminSidebar = () => {
     <div>
       <div className={`nav-container ${isSidebarVisible ? 'hidden' : ''}`}>
         <div className="navbar">
-          <img className="navbar-image" src="src/assets/scorawhite.svg" alt="Logo" />
+        <h1 className="heading">Smart Test</h1>
           <i className="nav-icon bx bx-menu" onClick={toggleSidebar}></i>
         </div>
       </div>
       <div className={`sidebar-container ${isSidebarVisible || !isScreenSmall ? '' : 'hidden'}`}>
-        <div className="sidebar">
-          <img className="sidebar-image" src="src/assets/scorawhite.svg" alt="Profile" />
+        <div className="sidebar"><br />
+        <h1 className="heading">Smart Test</h1><br /><br />
           <i className="bx bxs-face bx-flip-horizontal bi-profile"></i>
           <p className="sidebar-name">{studentData ? studentData.name : 'John Doe'}</p>
           <p className="sidebar-email">{studentData ? studentData.email : 'jhondoe12345@gmail.com'}</p>

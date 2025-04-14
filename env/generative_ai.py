@@ -2,7 +2,7 @@ import google.generativeai as genai
 from typing import List, Dict
 import json
 
-GOOGLE_API_KEY = "AIzaSyDjApCt7r09A0jH82clzVcyuGkEkuF-kno"
+GOOGLE_API_KEY = "AIzaSyAzFosuFo3LI8AE95d7qIgxHxaeBSOWqow"
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
@@ -29,7 +29,7 @@ def get_recommendations(course: List[str]) -> Dict[str, List[str]]:
     response = model.generate_content(combined_prompt)
     response = response.text
     print(response)
-    response = response[7:len(response)-3]
+    response = response[7:-4]
     print(response)
     response = json.loads(response)
     jobs = response["jobs"]
@@ -38,22 +38,27 @@ def get_recommendations(course: List[str]) -> Dict[str, List[str]]:
 
 
 def generate_questions(data, type, number_of_questions):
-    prompt = data + "From the above data, give me "+ str(number_of_questions) + " questions for a" + type + """test. output should be in format : [
-  {
-    "question{n}_id": "{id}",
-    "question{n}": "{question}",
-    "options{n}": [
-      "{option1}",
-      "{option2}",
-      "{option3}",
-      "{option4}",
-      "{option5}"
-    ],
-    "correct_answer{n}": "{correct_answer}",
-    "difficulty{n}": "{difficulty}"
-  },
-  ...
-]
-."""
+    prompt = f"""
+    Given the following question data:
+    {data}
+
+    Generate {number_of_questions} questions for a {type} test. The output should be in the following JSON format:
+
+    [
+      {{
+        "question_id": "id",
+        "question": "question",
+        "options": [
+          "option1",
+          "option2",
+          "option3",
+          "option4"
+        ],
+        "correct_answer": "correct_answer",
+        "difficulty": "difficulty"
+      }},
+      ...
+    ]
+    """
     questions = model.generate_content(prompt)
     return questions.text

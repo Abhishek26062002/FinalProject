@@ -8,7 +8,7 @@ const LandingPage = () => {
       <div className="main-landing1">
         <div className="main-landing-box1">
         <br /><br />
-          <img className="landingpage-image1" src="src\assets\scora.svg" alt="" /><br /><br />
+          <h1 className="heading-land">Smart Test</h1><br /><br />
           <p className="landing-paragraph">
             Because you care about your assessments. <br /> <br />
             We are building a complete ecosystem to help you <br />

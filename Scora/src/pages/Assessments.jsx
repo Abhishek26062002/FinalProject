@@ -60,7 +60,7 @@ const Assessments = () => {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });
-
+        
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -71,19 +71,20 @@ const Assessments = () => {
 
         sessionStorage.setItem('mcqTests', JSON.stringify(mcq));
         sessionStorage.setItem('descriptiveTests', JSON.stringify(descriptive));
-
+        
         setMcqTests(mcq);
         setDescriptiveTests(descriptive);
+        
       } catch (error) {
         console.error('Failed to fetch tests:', error);
       } finally {
         setLoading(false);
       }
     };
-
+    
     const storedMcqTests = sessionStorage.getItem('mcqTests');
     const storedDescriptiveTests = sessionStorage.getItem('descriptiveTests');
-
+    
     if (storedMcqTests && storedDescriptiveTests) {
       setMcqTests(JSON.parse(storedMcqTests));
       setDescriptiveTests(JSON.parse(storedDescriptiveTests));
@@ -96,6 +97,8 @@ const Assessments = () => {
   const handleTestClick = (testId) => {
     const storedMcqTests = JSON.parse(sessionStorage.getItem('mcqTests'));
     const storedDescriptiveTests = JSON.parse(sessionStorage.getItem('descriptiveTests'));
+
+    
 
     const allTests = [...(storedMcqTests || []), ...(storedDescriptiveTests || [])];
     const selectedTest = allTests.find((test) => test.test_id === testId);

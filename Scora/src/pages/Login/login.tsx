@@ -72,7 +72,7 @@ const Login: React.FC = () => {
           if (response.status === 200) {
             sessionStorage.setItem('user', email);
             sessionStorage.setItem('userType', 'student'); // Save userType
-            navigate('/home');
+            navigate('/dashboard');
           } else {
             alert('Error signing up');
           }
@@ -92,7 +92,7 @@ const Login: React.FC = () => {
             if (response.data.student.student_id === 6) {
               navigate('/admin');
             } else {
-              navigate('/home');
+              navigate('/dashboard');
             }
           } else {
             alert('Invalid Credentials');
@@ -193,7 +193,7 @@ const Login: React.FC = () => {
               <button onClick={toggleForm}>Sign In</button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Scora</h1>
+              <h1>NextGenTest</h1>
               <p>Enter your personal details and start journey with us</p>
               <button onClick={toggleForm}>Sign Up</button>
             </div>

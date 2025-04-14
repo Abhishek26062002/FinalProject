@@ -95,6 +95,10 @@
     padding: 15px;
     font-family: Inter;
     font-weight: 600;
+    cursor: pointer;
+}
+.test:hover{
+    border: 3px solid #00568c ;
 }
 .test-data{
     display: flex;
@@ -115,6 +119,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .bx-code-alt{
     color: #062e6f;
     font-size: 25px;

@@ -6,12 +6,12 @@ import LandingPage from './pages/LandingPage';
 import Login from './pages/Login/login';
 import Dashboard from './pages/Dashboard';
 import Assessments from './pages/Assessments';
-import Test from './pages/Tests';
+import Test from './pages/Tests';  // Ensure this matches the import and route parameter
 import Analyticspage from './pages/Analyticspage';
 import Insights from './pages/Insights';
 import Admin from './pages/Admin';
 import AddAssessments from './pages/AddAssessments';
-
+import Courses from './pages/Courses';
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient();
@@ -32,10 +32,10 @@ const ProtectedLayout = () => (
     <Routes>
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/assessments" element={<Assessments />} />
-      <Route path="/tests/:testid" element={<Test />} />
+      <Route path="/tests/:testId" element={<Test />} /> {/* Updated testId */}
       <Route path="/admin" element={<Admin />} />
       <Route path="/add" element={<AddAssessments />} />
-      <Route path="*" element={<Navigate to="/admin" />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   </QueryClientProvider>
 );
@@ -49,6 +49,7 @@ const App = () => (
       <Route path="/login" element={<Login />} />
       <Route path="/analytics" element={<Analyticspage />} />
       <Route path="/insights" element={<Insights />} />
+      <Route path="/recommendations" element={<Courses />} />
       
       {/* Protected Routes */}
       <Route
