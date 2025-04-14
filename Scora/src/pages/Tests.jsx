@@ -115,7 +115,7 @@ const Tests = () => {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/mcq_results/", {
+      const response = await fetch("https://finalproject-llyf.onrender.com/mcq_results/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resultPayload),
@@ -135,7 +135,7 @@ const Tests = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/test/${testId}`);
+        const response = await fetch(`https://finalproject-llyf.onrender.com/test/${testId}`);
         if (!response.ok) throw new Error("Failed to fetch questions.");
         const data = await response.json();
         if (Array.isArray(data[0])) {

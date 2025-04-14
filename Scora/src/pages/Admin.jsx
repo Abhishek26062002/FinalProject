@@ -14,7 +14,7 @@ const Admin = () => {
       const email = sessionStorage.getItem('user');
       if (email) {
         try {
-          const response = await fetch(`http://127.0.0.1:8000/student/?email=${encodeURIComponent(email)}`, {
+          const response = await fetch(`https://finalproject-llyf.onrender.com/student/?email=${encodeURIComponent(email)}`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Admin = () => {
 
     const fetchTestData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/test/');
+        const response = await fetch('https://finalproject-llyf.onrender.com/test/');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

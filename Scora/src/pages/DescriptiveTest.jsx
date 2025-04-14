@@ -17,7 +17,7 @@ const DescriptiveTest = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/test/${testId}`);
+        const response = await fetch(`https://finalproject-llyf.onrender.com/test/${testId}`);
         if (!response.ok) {
           throw new Error('Network response was not ok.');
         }

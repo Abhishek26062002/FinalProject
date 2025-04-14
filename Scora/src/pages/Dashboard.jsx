@@ -12,7 +12,7 @@ const Dashboard = () => {
       if (email) {
         try {
           // Fetch student data using email as a query parameter
-          const response = await fetch(`http://127.0.0.1:8000/student/?email=${encodeURIComponent(email)}`, {
+          const response = await fetch(`https://finalproject-llyf.onrender.com/student/?email=${encodeURIComponent(email)}`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',

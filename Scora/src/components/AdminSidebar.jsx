@@ -25,7 +25,7 @@ const AdminSidebar = () => {
       const email = sessionStorage.getItem('user'); // Retrieve email from session storage
       if (email) {
         try {
-          const response = await fetch(`http://127.0.0.1:8000/student/?email=${encodeURIComponent(email)}`, {
+          const response = await fetch(`https://finalproject-llyf.onrender.com/student/?email=${encodeURIComponent(email)}`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',

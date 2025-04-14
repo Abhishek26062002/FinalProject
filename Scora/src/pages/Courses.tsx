@@ -39,7 +39,7 @@ const Courses: React.FC = () => {
       //   ]
       // ]
 
-      const response = await axios.post('http://127.0.0.1:8000/recommendations', {
+      const response = await axios.post('https://finalproject-llyf.onrender.com/recommendations', {
         courses: coursesArray,
       });
 

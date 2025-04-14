@@ -56,7 +56,7 @@ const Assessments = () => {
   useEffect(() => {
     const fetchTests = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/test/', {
+        const response = await fetch('https://finalproject-llyf.onrender.com/test/', {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });

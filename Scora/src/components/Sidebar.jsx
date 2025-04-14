@@ -26,7 +26,7 @@ const Sidebar = () => {
       if (email) {
         try {
           // Adjusted to send email as a query parameter
-          const response = await fetch(`http://127.0.0.1:8000/student/?email=${encodeURIComponent(email)}`, {
+          const response = await fetch(`https://finalproject-llyf.onrender.com/student/?email=${encodeURIComponent(email)}`, {
             method: 'GET', // Using GET as it's a query parameter
             headers: {
               'Content-Type': 'application/json',
